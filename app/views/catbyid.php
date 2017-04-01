@@ -6,7 +6,7 @@
 <style>
 body {font-family: arial;font-size: 15px;line-height: 18px;margin: 0 auto;width: 850px;background:#EEEEEE}
 a{color:#3399FF;}
-.headeroption {background: #3399ff url("img/php.png") no-repeat scroll 25px 12px;height: 74px;overflow: hidden;padding-left: 140px;}
+.headeroption {background: #3399ff url("../img/php.png") no-repeat scroll 25px 12px;height: 74px;overflow: hidden;padding-left: 140px;}
 .headeroption h2{color: #000;font-size: 30px;padding-top: 2px;text-shadow: 0 1px 1px #fff;}
 .content{background: #fff;border: 6px solid #3399ff;font-size: 16px;line-height: 22px;margin-bottom: 3px;margin-top: 3px;min-height: 380px;overflow: hidden;padding: 10px;}
 
@@ -38,23 +38,40 @@ input[type="submit"]{cursor: pointer}
     <h2>Advanced PHP OOP Tutorial [MVC Framework]</h2>
 	
   </header>
+
+
+
+
+
+
 <div class="content">
 
-<h1>Kawsar from view</h1>
+<h1>Catagory By Id</h1>
 
-<?php 
-	$data = array('name' => 'Technology', 'title' => 'Technology');
-
-	$keys = ":" . implode(', :', array_keys($data));
-
-	echo '<pre>';
-	print_r($keys);
-	echo '<pre>';
-
- ?>
-
-
+<hr>
+	<?php
+		foreach ($catbyid as $key => $value) {
+			echo $value['name'] . '<br/>';
+		}
+		// foreach ($cat as $key) {
+		// 	echo $key['catOne'] . '<br/>';
+		// 	echo $key['catTwo'] . '<br/>';
+		// 	echo $key['catThree'] . '<br/>';
+		// }
+	?>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
   <footer class="footeroption">
 	  <section class="footerone">
