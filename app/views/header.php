@@ -6,7 +6,7 @@
 <style>
 body {font-family: arial;font-size: 15px;line-height: 18px;margin: 0 auto;width: 850px;background:#EEEEEE}
 a{color:#3399FF;}
-.headeroption {background: #3399ff url("../img/php.png") no-repeat scroll 25px 12px;height: 74px;overflow: hidden;padding-left: 140px;}
+.headeroption {background: #3399ff url("img/php.png") no-repeat scroll 25px 12px;height: 74px;overflow: hidden;padding-left: 140px;}
 .headeroption h2{color: #000;font-size: 30px;padding-top: 2px;text-shadow: 0 1px 1px #fff;}
 .content{background: #fff;border: 6px solid #3399ff;font-size: 16px;line-height: 22px;margin-bottom: 3px;margin-top: 3px;min-height: 380px;overflow: hidden;padding: 10px;}
 
@@ -31,6 +31,28 @@ input[type="submit"]{cursor: pointer}
 .footeroption{height:90px;background:#177de3;overflow:hidden;padding-top:10px;}
 .footerone {background: #3aa0ff;border-radius: 5px;float: left;font-size:18px;line-height:23px;margin-left: 10px;padding:6px 10px;text-align:center;text-shadow: 1px 0 2px #fff;width:390px;overflow: hidden;}
 .footerone p{margin:0;}
+
+.postcontent{ width: 560px; border-right: 1px solid #ddd; float: left; margin-right: 19px; padding-right: 20px; overflow: hidden; }
+.post{ margin-bottom: 40px; }
+.post h2{ border-bottom: 1px deshed #ddd; margin: 0; padding-bottom: 10px; }
+.post h2 a{ text-decoration: none; color: #000; }
+.readmore{ float: right;}
+.sidebar{ width: 218px; overflow: hidden; float: right;}
+.widget{ margin-bottom: 20px; }
+.widget h2{ border: 1px solid #ddd; margin: 0 0 10px; padding: 4px 10px; }
+.widget ul{ margin: 0; padding: 0; list-style: none; }
+.widget ul li{}
+.widget ul li a{ background: #3399ff none repeat scroll 0 0; color: #fff; display: block; margin-bottom: 1px; padding: 5px; text-decoration: none; }
+.widget ul li a:hover{ background: #5ec4ff; }
+
+.details{}
+.title{ border-bottom: 1px solid #ddd; }
+.title h2{margin: 0;}
+.title p{ margin: 0; padding: 5px 0; }
+.desc{}
+.desc p{ line-height: 24px; text-align: justify; }
+
+
 </style>
 </head>
 <body>
@@ -38,68 +60,5 @@ input[type="submit"]{cursor: pointer}
     <h2>Advanced PHP OOP Tutorial [MVC Framework]</h2>
 	
   </header>
-
-
-
-
-
-
+  
 <div class="content">
-
-<h3>Add Catagory</h3>
-<?php
-	if(isset($msg)){
-		echo '<span style="color:green;">' . $msg . '</span>';
-	}
-
-?>
-<hr>
-<form action="http://localhost/mvc/Category/insertCategory" method="POST">
-	
-	<table>
-		<tr>
-			<td>Category Name</td>
-			<td><input type="text" name="name" required="1"></td>
-		</tr>
-		<tr>
-			<td>Category Title</td>
-			<td><input type="text" name="title" required="1"></td>
-		</tr>
-		<tr>
-			<td></td>
-			<td><input type="submit" value="Save"></td>
-		</tr>
-	</table>
-
-</form>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <footer class="footeroption">
-	  <section class="footerone">
-	  <p>Delowar Jahan Imran</p>
-	  <p>Oracle Certified Professional,</p>
-	  <p>Java SE 6 Programmer</p>
-	  
-	  </section>
-	  <section class="footerone">
-		  <p>Like us: facebook.com/ProDelowar</p>
-		  <p>Join us: facebook.com/groups/PBPTBD</p>
-		  <p>Web: www.trainingWithLiveProject.com</p>
-	  </section>
-  </footer>
-
-</body>
-</html>

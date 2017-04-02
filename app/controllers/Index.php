@@ -12,70 +12,47 @@
 
 		public function home()
 		{
-			$this->load->view('home');
-		}
-
-		public function category()
-		{
-			$data = array();
-
-			$table = 'category';
-
-			$catModel = $this->load->model('CatModel');
-
-			$data['cat'] = $catModel->catList($table);
-
-			$this->load->view('category', $data);
-		}
-
-		public function catById()
-		{
+			$this->load->view('header');
 
 			$data = array();
 
-			$table = 'category';
+			$table = 'post';
 
-			$id = 1;
+			$postModel = $this->load->model('PostModel');
 
-			$catModel = $this->load->model('CatModel');
+			$data['allpost'] = $postModel->getAllPost($table);
 
-			$data['catbyid'] = $catModel->catById($table, $id);
 
-			$this->load->view('catbyid', $data);
+			$this->load->view('content', $data);
+			$this->load->view('sidebar');
+			$this->load->view('footer');
 		}
 
-		public function addCategory()
+		public function postDetails($id)
 		{
-			$this->load->view('addcatagory');
+			$data = array();
+
+			$tablePost = 'post';
+			$tableCat = 'category';
+
+			//$id = $_GET[];
+
+			$postModel = $this->load->model('PostModel');
+
+			$data['postbyid'] = $postModel->getPostById($tablePost, $tableCat, $id);
+
+			$this->load->view('header');
+
+			$this->load->view('details', $data);
+			$this->load->view('sidebar');
+			$this->load->view('footer');	
+		}
+
+		public function postByCat()
+		{
 			
 		}
 
-		public function insertCategory()
-		{
-			$table = 'category';
-
-			$name = $_POST['name'];
-			$title = $_POST['title'];
-
-			$data = array(
-					'name' => $name ,
-					'title' => $title
-				);
-
-			$catModel = $this->load->model('CatModel');
-			$result = $catModel->insertCat($table, $data);
-
-			$mdata = array();
-
-			if ($result == 1) {
-				$mdata['msg'] = 'Category Added Successfully....';
-			}else{
-				$mdata['msg'] = 'Category Not Added....';
-
-			}
-			$this->load->view('addcatagory', $mdata);
-
-		}
 	}
 
  ?>
