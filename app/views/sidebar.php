@@ -3,22 +3,29 @@
 	<div class="widget">
 		<h2>Category</h2>
 		<ul>
-			<li><a href="#">Category one</a></li>
-			<li><a href="#">Category one</a></li>
-			<li><a href="#">Category one</a></li>
-			<li><a href="#">Category one</a></li>
-			<li><a href="#">Category one</a></li>
+			<?php foreach ($allcat as $value) { ?>
+
+				<li>
+					<a href="<?php echo BASE_URL; ?>/Index/postByCat/<?php echo $value['id']; ?>">
+				
+						<?php echo $value['title'] ?>
+						
+					</a>
+				</li>
+
+			<?php } ?>
 		</ul>
 	</div>
 
 	<div class="widget">
 		<h2>Latest Post</h2>
 		<ul>
-			<li><a href="#">Latest one</a></li>
-			<li><a href="#">Latest one</a></li>
-			<li><a href="#">Latest one</a></li>
-			<li><a href="#">Latest one</a></li>
-			<li><a href="#">Latest one</a></li>
+			<?php foreach ($allpost as $value) { ?>
+				<li>
+					<a href="<?php echo BASE_URL; ?>/Index/postDetails/<?php echo $value['id']; ?>"><?php echo $value['title'] ?>
+					</a>
+				</li>
+				<?php } ?>
 		</ul>
 	</div>
 </aside>

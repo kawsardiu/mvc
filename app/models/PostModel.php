@@ -11,10 +11,10 @@
 			parent::__construct();
 		}
 
-		public function getAllPost($table)
+		public function getAllPost($tablePost, $tableCat)
 		{
 
-			$sql = "SELECT * FROM $table ORDER BY id DESC LIMIT 3";
+			$sql = "SELECT $tablePost.*, $tableCat.name FROM $tablePost INNER JOIN $tableCat ON $tablePost.cat = $tableCat.id ORDER BY $tablePost.id DESC LIMIT 5";
 			return $this->db->select($sql);
 		}
 
@@ -25,5 +25,11 @@
 			return $this->db->select($sql);
 		}
 
+		public function getPostByCat($tablePost, $tableCat, $id)
+		{
+			$sql = "SELECT $tablePost.*, $tableCat.name FROM $tablePost INNER JOIN $tableCat ON $tablePost.cat = $tableCat.id WHERE $tableCat.id = $id";
+			//$data = array(':id' => $id);
+			return $this->db->select($sql);
+		}
 	}
  ?>

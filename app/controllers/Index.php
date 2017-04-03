@@ -12,45 +12,86 @@
 
 		public function home()
 		{
-			$this->load->view('header');
-
-			$data = array();
-
-			$table = 'post';
-
-			$postModel = $this->load->model('PostModel');
-
-			$data['allpost'] = $postModel->getAllPost($table);
-
-
-			$this->load->view('content', $data);
-			$this->load->view('sidebar');
-			$this->load->view('footer');
-		}
-
-		public function postDetails($id)
-		{
 			$data = array();
 
 			$tablePost = 'post';
 			$tableCat = 'category';
 
-			//$id = $_GET[];
+			$this->load->view('header');
+			$catModel = $this->load->model('catModel');
+			$data['allcat'] = $catModel->catList($tableCat);
+
+			$this->load->view('search', $data);
+
+
+
+			$postModel = $this->load->model('PostModel');
+
+			$data['allpost'] = $postModel->getAllPost($tablePost, $tableCat);
+
+
+			$this->load->view('content', $data);
+			$this->load->view('sidebar',  $data);
+			$this->load->view('footer');
+		}
+
+		public function postDetails($id)
+		{
+
+
+			$data = array();
+
+			$tablePost = 'post';
+			$tableCat = 'category';
 
 			$postModel = $this->load->model('PostModel');
 
 			$data['postbyid'] = $postModel->getPostById($tablePost, $tableCat, $id);
 
 			$this->load->view('header');
+			$catModel = $this->load->model('catModel');
+			$data['allcat'] = $catModel->catList($tableCat);
+
+			$this->load->view('search', $data);
+
+
 
 			$this->load->view('details', $data);
-			$this->load->view('sidebar');
+			$data['allpost'] = $postModel->getAllPost($tablePost, $tableCat);
+
+			
+			$this->load->view('sidebar',  $data);
 			$this->load->view('footer');	
 		}
 
-		public function postByCat()
+		public function postByCat($id)
 		{
+
+			$data = array();
+
+			$tablePost = 'post';
+			$tableCat = 'category';
+
+			$postModel = $this->load->model('PostModel');
+
+			$data['postbycat'] = $postModel->getPostByCat($tablePost, $tableCat, $id);
+
+			$this->load->view('header');
+			$catModel = $this->load->model('catModel');
+			$data['allcat'] = $catModel->catList($tableCat);
+
+			$this->load->view('search', $data);
+
+
+
+
+
+			$this->load->view('postbycat', $data);
+			$data['allpost'] = $postModel->getAllPost($tablePost, $tableCat);
 			
+		
+			$this->load->view('sidebar',  $data);
+			$this->load->view('footer');	
 		}
 
 	}

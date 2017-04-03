@@ -52,6 +52,13 @@ input[type="submit"]{cursor: pointer}
 .desc{}
 .desc p{ line-height: 24px; text-align: justify; }
 
+.searchoption{ border-bottom: 2px dashed #3399FF; margin-bottom: 15px; padding-bottom: 20px; overflow: hidden; }
+.menu{ float: left; margin-top: 10px; font-size: 18px; }
+.menu a{ text-decoration: none; background: #f2f2f2; border: 1px solid #999; padding: 5px 10px; color: #666; }
+.search{ float: right; }
+.catsearch{ border: 1px solid #ddd; font-size: 16px; margin-bottom: 5px; padding: 5px; width: 228px; cursor: pointer; }
+.submitbtn{ cursor: pointer; font-size: 18px; padding: 3px 10px; }
+
 
 </style>
 </head>

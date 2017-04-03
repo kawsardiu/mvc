@@ -1,15 +1,14 @@
 
+
 <article class="postcontent">
-	<?php foreach ($allpost as $value) {
+	<?php foreach ($postbycat as $value) {
 	?>
 	<div class="post">
-		
-		<h2>
-			<a href="<?php echo BASE_URL; ?>/Index/postDetails/<?php echo $value['id']; ?>"><?php echo $value['title']; ?></a>
 
-		</h2>
-
-			<p>Category: <a href="<?php echo BASE_URL; ?>/Index/postByCat/<?php echo $value['cat']; ?>"><?php echo $value['name'] ?></a></p>
+		<div class="title">
+			<h2><?php echo $value['title']; ?></h2>
+			<p>Category: <?php echo $value['name'] ?></p>
+		</div>
 
 
 		<?php 

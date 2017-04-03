@@ -1,6 +1,4 @@
 
-<h4>Post details</h4>
-<hr>
 
 <article class="postcontent">
 	<?php foreach ($postbyid as $key => $value) {
